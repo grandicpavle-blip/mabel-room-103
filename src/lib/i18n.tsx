@@ -35,12 +35,10 @@ const dictionaries = {
     heroVideoCaption: "Naš prostor na Ljubinke Bobić 3",
     tagline: "Ljupkost u svakom detalju",
     supportLine: "Sve vezano za Vašu kosu i nokte",
-    viewServices: "Pogledaj usluge",
     servicesEyebrow: "Usluge",
     servicesTitle: "Kosa i nokti, pažljivo i sa stilom",
     servicesLead:
       "Od dnevnog feniranja do svečane frizure i pedantnog manikira - sve na jednom mestu.",
-    bookOnline: "Rezerviši online",
     services: [
       {
         title: "Kosa",
@@ -82,13 +80,9 @@ const dictionaries = {
       "Mabel Room 103 je salon za kosu i nokte na Bežanijskoj kosi. Ranije ste nas poznavali kao Medica life & style - danas nastavljamo isti kvalitet rada na novoj lokaciji, pod novim imenom.",
     aboutP2:
       "Dođite po boju koja stoji, nokte koji traju i atmosferu u kojoj se osećate kao kod kuće.",
-    salonLepote: "salon lepote",
     call: "Pozovi",
     reviewsEyebrow: "Utisci",
     reviewsHeading: "Šta kažu klijenti",
-    reviewsTitleSuffix: "na Google-u",
-    reviewsLeadBefore: "",
-    reviewsLeadAfter: "recenzija klijenata koji se vraćaju.",
     reviewsTrusted: "Poverenje od",
     reviewsTrustedAfter: "klijenata",
     allReviews: "Pogledaj na Google Maps",
@@ -99,7 +93,6 @@ const dictionaries = {
     reviewsEmpty: "Recenzije trenutno nisu dostupne ovde.",
     reviewsPrev: "Prethodne recenzije",
     reviewsNext: "Sledeće recenzije",
-    reviewsStarsOnly: "Ocena 5/5 na Google-u",
     teamEyebrow: "Tim",
     teamTitle: "Ljudi zbog kojih se vraćate",
     teamLead: "Iskustvo, preciznost i topla atmosfera - to je naš standard.",
@@ -123,7 +116,6 @@ const dictionaries = {
     contactEyebrow: "Posetite nas",
     contactTitle: "Adresa i radno vreme",
     address: "Adresa",
-    phone: "Telefon",
     emailLabel: "Mejl",
     hours: "Radno vreme",
     hoursRows: [
@@ -135,7 +127,6 @@ const dictionaries = {
     area: "Bežanijska kosa, Novi Beograd",
     footerFormerly: "Ranije",
     rights: "Sva prava zadržana.",
-    bookShort: "Zakaži",
     skipToContent: "Pređi na sadržaj",
     faqEyebrow: "Česta pitanja",
     faqTitle: "Sve što vas obično zanima",
@@ -163,12 +154,10 @@ const dictionaries = {
     heroVideoCaption: "Our space at Ljubinke Bobić 3",
     tagline: "Charm in every detail",
     supportLine: "Everything for your hair and nails",
-    viewServices: "View services",
     servicesEyebrow: "Services",
     servicesTitle: "Hair and nails, carefully styled",
     servicesLead:
       "From everyday blowouts to occasion updos and precise manicures - all in one place.",
-    bookOnline: "Book online",
     services: [
       {
         title: "Hair",
@@ -210,13 +199,9 @@ const dictionaries = {
       "Mabel Room 103 is a hair and nail salon in Bežanijska kosa. You may have known us as Medica life & style - today we continue the same quality of work at a new location, under a new name.",
     aboutP2:
       "Come for color that lasts, nails that hold, and an atmosphere that feels like home.",
-    salonLepote: "beauty salon",
     call: "Call",
     reviewsEyebrow: "Reviews",
     reviewsHeading: "What clients say",
-    reviewsTitleSuffix: "on Google",
-    reviewsLeadBefore: "",
-    reviewsLeadAfter: "reviews from clients who keep coming back.",
     reviewsTrusted: "Trusted by",
     reviewsTrustedAfter: "clients",
     allReviews: "See on Google Maps",
@@ -227,7 +212,6 @@ const dictionaries = {
     reviewsEmpty: "Reviews are temporarily unavailable here.",
     reviewsPrev: "Previous reviews",
     reviewsNext: "Next reviews",
-    reviewsStarsOnly: "5/5 rating on Google",
     teamEyebrow: "Team",
     teamTitle: "The people you return for",
     teamLead: "Experience, precision and a warm atmosphere - that is our standard.",
@@ -251,7 +235,6 @@ const dictionaries = {
     contactEyebrow: "Visit us",
     contactTitle: "Address and hours",
     address: "Address",
-    phone: "Phone",
     emailLabel: "Email",
     hours: "Opening hours",
     hoursRows: [
@@ -263,7 +246,6 @@ const dictionaries = {
     area: "Bežanijska kosa, Novi Beograd",
     footerFormerly: "Formerly",
     rights: "All rights reserved.",
-    bookShort: "Book",
     skipToContent: "Skip to content",
     faqEyebrow: "FAQ",
     faqTitle: "The things people usually ask",

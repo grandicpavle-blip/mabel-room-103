@@ -2,10 +2,12 @@
 
 import { IconClock, IconMaps, IconPhone, IconStar } from "@/components/Icons";
 import { useLang } from "@/lib/i18n";
+import { useReviews } from "@/lib/reviews-context";
 import { site } from "@/lib/site";
 
 export function Hero() {
   const { t } = useLang();
+  const { data } = useReviews();
 
   return (
     <section id="top" className="hero-shell">
@@ -54,7 +56,7 @@ export function Hero() {
               ))}
             </span>
             <span>
-              <strong>{site.rating.value.toFixed(1)}</strong> · {site.rating.count}{" "}
+              <strong>{data.rating.toFixed(1)}</strong> · {data.count}{" "}
               {t.heroRatingSuffix}
             </span>
           </a>

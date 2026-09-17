@@ -1,4 +1,4 @@
-export const site = {
+﻿export const site = {
   name: "Mabel Room 103",
   tagline: "Ljupkost u svakom detalju",
   supportLine: "Sve vezano za Vašu kosu i nokte",
@@ -33,7 +33,7 @@ export const site = {
   googleWriteReview:
     "https://search.google.com/local/writereview?placeid=ChIJW4KtawBvWkfBNmE0buw1zg",
   sredime: "https://www.sredime.rs/widget/medica-life-style",
-  rating: { value: 5.0, count: 15 },
+  ratingFallback: { value: 5.0, count: 15 },
   url: "https://mabelroom103.rs",
 };
 
@@ -64,23 +64,3 @@ export const services = [
   },
 ];
 
-export const team = [
-  {
-    name: "Mara",
-    role: "Kosa i boja",
-    text: "Šišanje, farbanje, feniranje i frizure sa godinama poverenja klijenata.",
-  },
-  {
-    name: "Biljana",
-    role: "Nokti i pedikir",
-    text: "Manikir, gel, izlivanje i pedikir - pedantno i bez greške.",
-  },
-];
-
-export const nav = [
-  { href: "#usluge", label: "Usluge" },
-  { href: "#galerija", label: "Galerija" },
-  { href: "#o-nama", label: "O nama" },
-  { href: "#utisci", label: "Utisci" },
-  { href: "#tim", label: "Tim" },
-];

@@ -2,22 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useLang } from "@/lib/i18n";
+import { useReviews } from "@/lib/reviews-context";
 import { site } from "@/lib/site";
-
-type GoogleReview = {
-  name: string;
-  text: string;
-  avatar: string;
-  relativeTime: string;
-  rating: number;
-};
-
-type ReviewsData = {
-  rating: number;
-  count: number;
-  reviews: GoogleReview[];
-  avatars: string[];
-};
 
 const PER_PAGE = 4;
 
@@ -68,42 +54,14 @@ function StarRow({ rating }: { rating: number }) {
 }
 
 export function Reviews() {
-  const { lang, t } = useLang();
-  const [data, setData] = useState<ReviewsData>({
-    rating: site.rating.value,
-    count: site.rating.count,
-    reviews: [],
-    avatars: [],
-  });
+  const { t } = useLang();
+  const { data, loading } = useReviews();
   const [page, setPage] = useState(0);
-  const [loading, setLoading] = useState(true);
   const [anim, setAnim] = useState<"idle" | "left" | "right">("idle");
 
   useEffect(() => {
-    let alive = true;
-    setLoading(true);
-    fetch(`/api/google-reviews?lang=${lang}`, { cache: "no-store" })
-      .then((res) => res.json())
-      .then((payload: ReviewsData) => {
-        if (!alive) return;
-        if (payload?.rating && payload?.count) {
-          setData({
-            rating: payload.rating,
-            count: payload.count,
-            reviews: Array.isArray(payload.reviews) ? payload.reviews : [],
-            avatars: Array.isArray(payload.avatars) ? payload.avatars : [],
-          });
-          setPage(0);
-        }
-      })
-      .catch(() => undefined)
-      .finally(() => {
-        if (alive) setLoading(false);
-      });
-    return () => {
-      alive = false;
-    };
-  }, [lang]);
+    setPage(0);
+  }, [data]);
 
   const total = data.reviews.length;
   const pageCount = Math.max(1, Math.ceil(total / PER_PAGE));

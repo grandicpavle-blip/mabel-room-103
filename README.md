@@ -1,19 +1,20 @@
 # Mabel Room 103
 
-Premium sajt za frizersko-nail salon **Mabel Room 103** (Bežanijska kosa, Beograd).
+Sajt frizersko-nail salona **Mabel Room 103** (Ljubinke Bobić 3, Bežanijska kosa, Novi Beograd). Ranije Medica life & style.
 
-## Lokalno
+Next.js 16 na Cloudflare Workers. Srpski i engleski.
+
+## Brzo
+
+```powershell
+$env:PATH = "$env:LOCALAPPDATA\nodejs-portable\node-v22.14.0-win-x64;$env:PATH"
+```
 
 ```bash
 npm install
-npm run dev
+npm run dev       # razvoj
+npm run preview   # lokalno u Cloudflare okruzenju
+npm run deploy    # objava na zivi sajt
 ```
 
-## Produkcija
-
-```bash
-npm run build
-npm start
-```
-
-Detalji za Vercel, domen i Google Business: vidi [DEPLOY.md](./DEPLOY.md).
+Detalji, povezivanje domena i Google podešavanja: [DEPLOY.md](./DEPLOY.md).

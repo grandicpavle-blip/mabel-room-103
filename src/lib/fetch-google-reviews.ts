@@ -262,9 +262,10 @@ async function fetchBoqPage(
   sortOrder: 1 | 2,
   lang: "sr" | "en",
   paginationToken = "",
+  cacheMode: RequestCache = "no-store",
 ) {
   const res = await fetch(boqUrl(sortOrder, paginationToken), {
-    cache: "no-store",
+    cache: cacheMode,
     headers: {
       "User-Agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -299,12 +300,15 @@ async function translateToEnglish(text: string) {
   }
 }
 
-async function fetchAllReviews(lang: "sr" | "en") {
+async function fetchAllReviews(
+  lang: "sr" | "en",
+  cacheMode: RequestCache = "no-store",
+) {
   const reviews: GoogleReview[] = [];
   let token = "";
 
   for (let page = 0; page < 8; page++) {
-    const data = await fetchBoqPage(2, lang, token);
+    const data = await fetchBoqPage(2, lang, token, cacheMode);
     if (!data) break;
 
     for (const item of data.reviews) {
@@ -330,9 +334,10 @@ async function fetchAllReviews(lang: "sr" | "en") {
 
 export async function fetchGoogleReviews(
   preferred: "sr" | "en" = "sr",
+  cacheMode: RequestCache = "no-store",
 ): Promise<GoogleReviewsPayload> {
   try {
-    const reviews = await fetchAllReviews(preferred);
+    const reviews = await fetchAllReviews(preferred, cacheMode);
     if (!reviews.length) {
       return { ...FALLBACK, updatedAt: new Date().toISOString() };
     }

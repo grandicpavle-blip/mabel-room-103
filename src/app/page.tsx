@@ -14,25 +14,28 @@ import { SkipLink } from "@/components/SkipLink";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { Team } from "@/components/Team";
 import { LanguageProvider } from "@/lib/i18n";
+import { ReviewsProvider } from "@/lib/reviews-context";
 
 export default function HomePage() {
   return (
     <LanguageProvider>
-      <SkipLink />
-      <SmoothScroll />
-      <Header />
-      <main id="sadrzaj">
-        <Hero />
-        <Services />
-        <Gallery />
-        <About />
-        <Reviews />
-        <Team />
-        <Booking />
-        <Faq />
-        <Contact />
-      </main>
-      <Footer />
+      <ReviewsProvider>
+        <SkipLink />
+        <SmoothScroll />
+        <Header />
+        <main id="sadrzaj">
+          <Hero />
+          <Services />
+          <Gallery />
+          <About />
+          <Reviews />
+          <Team />
+          <Booking />
+          <Faq />
+          <Contact />
+        </main>
+        <Footer />
+      </ReviewsProvider>
     </LanguageProvider>
   );
 }

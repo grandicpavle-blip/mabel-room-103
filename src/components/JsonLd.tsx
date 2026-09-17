@@ -1,8 +1,22 @@
 import { faqSr } from "@/lib/faq";
+import { fetchGoogleReviews } from "@/lib/fetch-google-reviews";
 import { services, site } from "@/lib/site";
 
-export function JsonLd() {
+export async function JsonLd() {
   const salonId = `${site.url}/#salon`;
+
+  let rating = site.ratingFallback.value;
+  let reviewCount = site.ratingFallback.count;
+  try {
+    const live = await fetchGoogleReviews("sr", "force-cache");
+    if (live.source === "google" && live.rating && live.count) {
+      rating = live.rating;
+      reviewCount = live.count;
+    }
+  } catch {
+    rating = site.ratingFallback.value;
+    reviewCount = site.ratingFallback.count;
+  }
 
   const salon = {
     "@type": ["BeautySalon", "HairSalon", "NailSalon"],
@@ -90,8 +104,8 @@ export function JsonLd() {
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: site.rating.value,
-      reviewCount: site.rating.count,
+      ratingValue: rating,
+      reviewCount: reviewCount,
       bestRating: 5,
       worstRating: 1,
     },
