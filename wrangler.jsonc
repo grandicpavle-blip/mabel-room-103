@@ -2,6 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
   "name": "mabel-room-103",
+  "workers_dev": true,
   "compatibility_date": "2025-09-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
@@ -17,6 +18,10 @@
   "images": {
     "binding": "IMAGES"
   },
+  "routes": [
+    { "pattern": "mabelroom103.rs", "custom_domain": true },
+    { "pattern": "www.mabelroom103.rs", "custom_domain": true }
+  ],
   "observability": {
     "enabled": true
   }
